@@ -142,10 +142,6 @@ class WeatherApp {
       this.cityInput.focus();
       return;
     }
-    if (!this.apiKey.trim()) {
-      this.view.setStatus('Uzupełnij stałą API_KEY w pliku scripts.js.', true);
-      return;
-    }
 
     this.pendingRequests = 2;
     this.hasError = false;
