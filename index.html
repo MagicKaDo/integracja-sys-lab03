@@ -1,14 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imie Nazwisko (00000) - IS LAB C</title>
+    <title>Pogoda w mieście - IS LAB C</title>
 
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+    <main class="container">
+        <header>
+            <div class="header-copy">
+                <p class="eyebrow">POGODOWE BIURO HUMORÓW</p>
+                <h1>Niebo ma dziś <span>humorki.</span></h1>
+                <p>Parasol czy okulary? Sprawdź, co szykuje pogoda na najbliższe 5 dni.</p>
+            </div>
+            <div class="weather-sticker" aria-hidden="true">
+                <div class="sun-face">
+                    <span class="sun-eye"></span>
+                    <span class="sun-eye"></span>
+                    <span class="sun-smile"></span>
+                </div>
+                <span class="sticker-caption">BEZ WRÓŻENIA Z CHMUR</span>
+            </div>
+        </header>
 
+        <form id="weather-form" class="search-panel">
+            <div class="field">
+                <label for="city">Miejscowość</label>
+                <input id="city" name="city" type="text" placeholder="np. Warszawa, PL"
+                       autocomplete="address-level2" maxlength="120" required>
+                <small>Możesz dopisać kod kraju, np. PL.</small>
+            </div>
+            <button type="submit" id="search-button">Pogoda</button>
+        </form>
+
+        <p id="status" role="status" aria-live="polite">Wpisz miejscowość, aby sprawdzić pogodę.</p>
+
+        <section class="current-panel" aria-labelledby="current-heading">
+            <p class="eyebrow">NA ŻYWO Z NIEBA</p>
+            <h2 id="current-heading">Pogoda bieżąca</h2>
+            <div id="current-weather"><p class="placeholder">Tutaj pojawią się aktualne warunki pogodowe.</p></div>
+        </section>
+
+        <section class="forecast-panel" aria-labelledby="forecast-heading">
+            <p class="eyebrow">CIĄG DALSZY NASTĄPI…</p>
+            <h2 id="forecast-heading">Prognoza na 5 dni</h2>
+            <p class="section-note">Dane co 3 godziny. Godziny podajemy według czasu wybranej miejscowości.</p>
+            <div id="forecast"><p class="placeholder">Tutaj pojawi się prognoza pogody.</p></div>
+        </section>
+        <footer>Dane pogodowe: <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a></footer>
+    </main>
 </body>
 </html>
